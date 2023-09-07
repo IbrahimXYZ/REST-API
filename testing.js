@@ -1,7 +1,3 @@
-import express from 'express';
-
-const router = express.Router();
-
 const movies = [
     {   
         Id : "1",
@@ -197,29 +193,9 @@ const movies = [
 
 ]
 
-router.get('/',(req,res)=>{
-    console.log("hi")
-    res.send(movies)
-})
-
-router.get('/movie_id/:id',(req,res)=>{
-    console.log(111)
-    var movie = movies[req.params.id]
-    res.send(movie)
-
-})
-
-router.get('/movie_name/:name',(req,res)=>{
-    console.log(211)
-    const searchIndex = movies.findIndex((movie) => movie.Name == req.params.name)
-    res.send(movies[searchIndex])
-
-})
-
-
-
-
-
-
-
-export default router;
+const result = movies.forEach(element => {
+    if (element.Writer == "Hayao Mizaki"){
+        console.log(element)
+    }
+    
+});

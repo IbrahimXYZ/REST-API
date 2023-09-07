@@ -8,6 +8,7 @@ const PORT = 3000;
 app.use(bodyParser.json());
 
 app.use('/movies', movieRoutes);
+app.use('/movies/name',movieRoutes)
 
 app.get('/', (req,res)=>{
     console.log('[TEST]!');
